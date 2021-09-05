@@ -80,6 +80,132 @@
         document.querySelector('#logoElems').innerHTML = logoElems;
     }
 
+    const footerList = [{
+        section: [{
+            name: 'Products',
+            url: 'https://www.varicent.com/'
+        }, {
+            name: 'Sales Performance Management',
+            url: 'https://www.varicent.com/sales-performance-management'
+        }, {
+            name: 'Incentive Compensation Management',
+            url: 'https://www.varicent.com/incentive-compensation-management'
+        }, {
+            name: 'Revenue Intelligence',
+            url: 'https://www.varicent.com/revenue-intelligence'
+        }, {
+            name: 'Territory and Quota Planning',
+            url: 'https://www.varicent.com/sales-territory-planning'
+        }, {
+            name: 'Symon.AI',
+            url: 'https://www.varicent.com/symon.ai'
+        }, {
+            name: 'Integrations',
+            url: 'https://www.varicent.com/integrations'
+        }]
+    }, {
+        section: [{
+            name: 'Resources',
+            url: 'https://www.varicent.com/'
+        }, {
+            name: 'Sales Performance Think Tank',
+            url: 'https://www.varicent.com/blog'
+        }, {
+            name: 'Varicent Academy',
+            url: 'https://www.varicent.com/resources/academy'
+        }, {
+            name: 'ROI Calculator',
+            url: 'https://www.varicent.com/lets-calculate-your-potential-roi'
+        }, {
+            name: 'Webinars',
+            url: 'https://www.varicent.com/webinars'
+        }, {
+            name: 'Events',
+            url: 'https://www.varicent.com/events'
+        }, {
+            name: 'Whitepapers',
+            url: 'https://www.varicent.com/whitepapers-studies'
+        }, {
+            name: 'Educational Services',
+            url: 'https://www.varicent.com/resources/educational-services'
+        }]
+    }, {
+        section: [{
+            name: 'Company',
+            url: 'https://www.varicent.com/'
+        }, {
+            name: 'About',
+            url: 'https://www.varicent.com/about-varicent'
+        }, {
+            name: 'Who is Varicent?',
+            url: 'https://www.varicent.com/who-is-varicent'
+        }, {
+            name: 'Our Cause',
+            url: 'https://www.varicent.com/company/our-cause'
+        }, {
+            name: 'EDGE Scholarship',
+            url: 'https://www.varicent.com/company/edge-scholarship'
+        }, {
+            name: 'News',
+            url: 'https://www.varicent.com/releases'
+        }, {
+            name: 'Careers',
+            url: 'https://www.varicent.com/company/careers'
+        }, {
+            name: 'Customer Exclusive Offerings',
+            url: 'https://www.customers.varicent.com/'
+        }, {
+            name: 'Partners',
+            url: 'https://www.varicent.com/company/partners'
+        }, {
+            name: 'Linkedin',
+            url: '"https://www.linkedin.com/company/varicent-software/'
+        }]
+    }, {
+        section: [{
+            name: 'Help',
+            url: 'https://www.varicent.com/'
+        }, {
+            name: 'Book a Demo',
+            url: 'https://www.varicent.com/book-a-demo'
+        }, {
+            name: 'Contact Us',
+            url: 'https://www.varicent.com/contact-us'
+        }, {
+            name: 'Support',
+            url: 'https://www.varicent.com/company/support'
+        }, {
+            name: 'EDGE ScholarshipSearch',
+            url: 'https://www.varicent.com/company/hs-search-results'
+        }, {
+            name: 'Privacy',
+            url: 'https://www.varicent.com/privacy-policy'
+        }, {
+            name: 'Terms and Conditions',
+            url: 'https://www.varicent.com/terms-and-conditions'
+        }, {
+            name: 'Symon.AI - Terms and Conditions',
+            url: 'https://www.customers.varicent.com/terms-and-conditions-symon'
+        }, {
+            name: 'Varicent Concert - Terms of Service',
+            url: 'https://www.varicent.com/company/concert-terms-of-service'
+        }]
+    }];
+
+    const injectFooter = () => {
+        let footer = '';
+        footerList.forEach(item => {
+            let footerObj = `<ul class="col-6 col-md mb-4">`
+            item.section.forEach((sec, index) => {
+                footerObj += `<li class="${index === 0 ? 'parent-nav' : ''}"><a target="self" href="${sec.url}">${sec.name}</a></li>`
+            });
+            footerObj += `</ul>`;
+            footer += footerObj;
+        });
+        document.querySelector('#footerElem').innerHTML = footer;
+    }
+
     injectMainMenus();
     injectPartnerLogos();
+    injectFooter();
 })();
